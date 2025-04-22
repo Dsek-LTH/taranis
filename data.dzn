@@ -1,2 +1,16 @@
 % number of groups
-n = 15;
+n = 12;
+
+% meal -> hosts of that meal
+% has to be manually assigned for now; will likely be generated in the future from n
+hosts = [| starter: 1,2,3,4
+         | main: 5,6,7,8
+         | dessert: 9,10,11,12
+         |];
+
+% outer groups, i.e. mutual exclusivity zones, ids in the same outer group can't meet
+% currently a bit buggy (probably lacking symmetry breaking for gc = 0)
+gc = 2;
+outer_groups = [
+  {1, 5}, {7, 11}
+];
